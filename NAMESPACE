@@ -1,9 +1,6 @@
 export(ts_chatbox)
 export(ts_qchat)
-.onLoad <- function(libname = find.package("talkstats"), 
-    pkgname = "talkstats") {
-    data(ts_emoticons, envir = .GlobalEnv)
-}
+
 
 
 
