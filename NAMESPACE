@@ -1,3 +1,6 @@
 export(ts_chatbox)
 export(ts_qchat)
+export(ts_username)
+export(ts_password)
+
 

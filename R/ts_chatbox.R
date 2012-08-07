@@ -8,18 +8,20 @@ function(user = ts_username, pass = ts_password,
 	curlSetOpt(cookiefile='cookies.txt', curl = curl)   
 	loc <- paste0(find.package("talkstats"), "/Data")                  
 	if (is.na(ts_username) | clear.username) {
-		unlink(paste0(loc, "/ts_username.rda"), recursive = TRUE, 
-			   force = FALSE)
 		cat("\n","Enter Talkstats Username","\n")
 		ts_username <- scan(n=1,what = character(0), quiet=T)
-		save(ts_username, file=paste0(loc, "/ts_username.rda"))
+		env <- as.environment("package:talkstats")
+		unlockBinding("ts_username" , env = env )
+		assign("ts_username" , ts_username, envir = env )
+		lockBinding("ts_username" , env = env )
 	}     
 	if (is.na(ts_password) | clear.password) {
-		unlink(paste0(loc, "/ts_password.rda"), recursive = TRUE, 
-			   force = FALSE)
-		cat("\n","Enter Talkstats password","\n")
+		cat("\n","Enter Talkstats Password","\n")
 		ts_password <- scan(n=1,what = character(0), quiet=T)
-		save(ts_password, file=paste0(loc, "/ts_password.rda"))
+		env <- as.environment("package:talkstats")
+		unlockBinding("ts_password" , env = env )
+		assign("ts_password" , ts_password, envir = env )
+		lockBinding("ts_password" , env = env )
 	}                                                                     
 	x <- postForm("http://www.talkstats.com/login.php",                   
 				  do="login",                                                       

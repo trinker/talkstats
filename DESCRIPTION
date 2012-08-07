@@ -7,7 +7,6 @@ Author: talkstats members
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Depends: R (>= 2.15.0)
 Description: Random talkstats stuff
-LazyData: true
 ByteCompile: yes
 License: GPL-2
 URL: http://www.talkstats.com
