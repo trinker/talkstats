@@ -51,8 +51,7 @@ ts_chatbox <- function(user = NULL, pass = NULL,
         curl = curl) 
     txt <- textConnection(tmp)                                                     
     w <- read.csv(txt)                                   
-    w[, "Chats"] <- as.character(w[, "Chats"])                            
-                                                                          
+    w[, "Chats"] <- as.character(w[, "Chats"])                                                                                                  
     tsdate <- function(date){                                             
         u <- as.character(date)                                           
         v <- sapply(strsplit(u, "/", fixed=TRUE), function(x) x[[1]])     
